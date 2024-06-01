@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Inventarium {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-gray-100">
+    <header>
+        <nav class="bg-gray-200 text-white p-4">
+            <div class="container mx-auto">
+                <a href="#" class="font-bold">Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="bg-gray-200 text-white text-center p-4 mt-4">
+        {% include 'partials/footer.html' %}
+    </footer>
+    
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
